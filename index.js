@@ -5,6 +5,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+//To make express show static content, the page index.html and the JavaScript, etc., it fetches, we need a built-in middleware from express called static.
+app.use(express.static('build'));
 
 morgan.token('body', (req) => {
   return JSON.stringify(req.body);
